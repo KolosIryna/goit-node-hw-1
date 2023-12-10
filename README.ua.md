@@ -1,5 +1,3 @@
-**Читати на інших мовах: [Русский](README.md), [Українська](README.ua.md).**
-
 # Домашнє завдання 1
 
 ## Крок 1
@@ -58,29 +56,29 @@ function addContact(name, email, phone) {
 
 ```js
 // index.js
-const argv = require('yargs').argv;
+const argv = require("yargs").argv;
 
 // TODO: рефакторить
 function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
-    case 'list':
+    case "list":
       // ...
       break;
 
-    case 'get':
+    case "get":
       // ... id
       break;
 
-    case 'add':
+    case "add":
       // ... name email phone
       break;
 
-    case 'remove':
+    case "remove":
       // ... id
       break;
 
     default:
-      console.warn('\x1B[31m Unknown action type!');
+      console.warn("\x1B[31m Unknown action type!");
   }
 }
 
@@ -90,14 +88,14 @@ invokeAction(argv);
 Так само, ви можете використовувати модуль [commander] (https://www.npmjs.com/package/commander) для парсинга аргументів командного рядка. Це більш популярна альтернатива модуля `yargs`
 
 ```js
-const { Command } = require('commander');
+const { Command } = require("commander");
 const program = new Command();
 program
-  .option('-a, --action <type>', 'choose action')
-  .option('-i, --id <type>', 'user id')
-  .option('-n, --name <type>', 'user name')
-  .option('-e, --email <type>', 'user email')
-  .option('-p, --phone <type>', 'user phone');
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
 
 program.parse(process.argv);
 
@@ -106,24 +104,24 @@ const argv = program.opts();
 // TODO: рефакторить
 function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
-    case 'list':
+    case "list":
       // ...
       break;
 
-    case 'get':
+    case "get":
       // ... id
       break;
 
-    case 'add':
+    case "add":
       // ... name email phone
       break;
 
-    case 'remove':
+    case "remove":
       // ... id
       break;
 
     default:
-      console.warn('\x1B[31m Unknown action type!');
+      console.warn("\x1B[31m Unknown action type!");
   }
 }
 
@@ -152,14 +150,3 @@ node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH
 
 Скріншоти виконання команд, можна залити на будь-який безкоштовний хмарний сервіс зберігання картинок (Приклад: [monosnap](https://monosnap.com/), [imgbb.com](https://imgbb.com/)) і відповідні посилання необхідно додати в файл README.md. Створіть цей файл в корені проекту. Після прикріпіть посилання на сховище з домашнім завданням в [schoology](https://app.schoology.com/login) для перевірки ментором.
 Також у файл README.md треба додати посилання на репозиторій зі зробленою роботою.
-
-## Критерії прийому
-
-- Створено репозиторій з домашнім завданням &mdash; CLI додаток
-- Завдання відправлено менторові в [schoology](https://app.schoology.com/login) на перевірку (посилання на репозиторій)
-- Код відповідає технічному завданню проекту
-- При виконанні коду не виникає необроблених помилок
-- Назва змінних, властивостей і методів починається з малої літери і записуються в нотації CamelCase. Використовуються англійські іменники
-- Назва функції або методу містить дієслово
-- У коді немає закоментованих ділянок коду
-- Проект коректно працює з актуальною LTS-версією Node
